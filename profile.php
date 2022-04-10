@@ -141,7 +141,7 @@
         
 
         <div class="col-md-8 m-auto block" id="main_content">
-      <h3>Create Notice</h3><br>
+      <h3>Add your calories</h3><br>
         <form action="calorieupdate.php" method="post" enctype="multipart/form-data">
         <div class="form-group">
           <div class="col-sm-12">
