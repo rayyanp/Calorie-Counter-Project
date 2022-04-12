@@ -50,7 +50,7 @@
     }
     ;
 
-    $sql5 = "SELECT (SUM(calorie_intake) + SUM(calories_burnt)) as 'Total' FROM calories WHERE uid = '$uid' AND date(datetime) = curdate()";
+    $sql5 = "SELECT (SUM(calorie_intake) - SUM(calories_burnt)) as 'Total' FROM calories WHERE uid = '$uid' AND date(datetime) = curdate()";
     $sql5_result = mysqli_query($connection, $sql5) or die(mysqli_error($connection));
 
     while ($row = mysqli_fetch_assoc($sql5_result)) {
