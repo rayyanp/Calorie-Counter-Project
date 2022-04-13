@@ -114,7 +114,8 @@
              <div class="form-group">
              <label for="calorie_goal" class="col-sm-2 col-sm-offset-2 control-label">Calorie Goal:</label>
              <input class="form-control" type="number" minlength="1" maxlength="5" name="calorie_goal" placeholder="Enter your calorie goal" required>
-              </div>
+              </div><br>
+              <p>By clicking Sign Up, you agree to our Terms and that have read our Data Policy, including your Cookie use.<p>
             <button class="btn btn-primary" type="submit" name="sign_up">Sign Up</button>
           </form><br>
           <a href="index.php">Click here to sign in</a>
