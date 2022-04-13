@@ -17,7 +17,7 @@ echo <<<HEADER
         <a class="nav-link" href="history.php">Diary</a>
     </li>
     <li class="nav-item active">
-        <a class="nav-link" href="experience.php">Experience</a>
+        <a class="nav-link" href="experience.php">Support</a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="sign_out.php">Sign Out</a>
