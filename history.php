@@ -14,24 +14,24 @@ else
 
 if(isset($_POST['ASC']))
 {
-    $asc_query = "SELECT * FROM calories WHERE uid = $uid ORDER BY cid ASC";
+    $asc_query = "SELECT * FROM calories WHERE uid = $uid ORDER BY cid ASC AND date(datetime) = curdate()";
     $result = executeQuery($asc_query);
 }
 
 // Descending Order
 elseif (isset ($_POST['DESC'])) 
     {
-          $desc_query = "SELECT * FROM calories WHERE uid = $uid ORDER BY cid DESC";
+          $desc_query = "SELECT * FROM calories WHERE uid = $uid ORDER BY cid DESC AND date(datetime) = curdate()";
           $result = executeQuery($desc_query);
     }
     
     // Default Order
  else {
-        $default_query = "SELECT * FROM calories WHERE uid = $uid";
+        $default_query = "SELECT * FROM calories WHERE uid = $uid AND date(datetime) = curdate()";
         $result = executeQuery($default_query);
 }
 ?>
-
+      <h3>Today</h3><br>
         <div class="col-md-8 m-auto block" id="main_content">
       <h3>Add your calories</h3><br>
         <form action="calorieupdate.php" method="post" enctype="multipart/form-data">
@@ -82,10 +82,9 @@ elseif (isset ($_POST['DESC']))
         </form>
       </div> 
     </div><br>
-
     
     <div class="col-md-8 m-auto block" id="main_content">
-    <h3>Your history</h3><br>
+    <h3>Todays calories</h3><br>
       <form action="history.php" method="post">
         <input type="submit" class = "btn btn-info" name="ASC" value="Ascending">
         <input type="submit" class = "btn btn-info" name="DESC" value="Descending"><br><br>
@@ -125,4 +124,5 @@ while($row = mysqli_fetch_assoc($result)){
 <?php
 include 'footer.php';
 ?>
+
 
