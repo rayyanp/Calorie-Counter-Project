@@ -32,6 +32,57 @@ elseif (isset ($_POST['DESC']))
 }
 ?>
 
+        <div class="col-md-8 m-auto block" id="main_content">
+      <h3>Add your calories</h3><br>
+        <form action="calorieupdate.php" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+          <div class="col-sm-12">
+              <label for="inputFood" class="col-sm-12">What did you eat?</label>
+              </div>
+          </div>
+              <div class="form-group">
+              <div class="col-sm-4 col-sm-offset-4">
+                  <input type="text" class="form-control" id="inputFood" placeholder="Title" name="food">
+              </div>
+          </div>
+          
+          <div class="form-group">
+          <div class="col-sm-12">
+              <label for="inputCal" class="col-sm-12">How many calories?</label>
+              </div>
+          </div>
+          <div class="form-group">
+          <div class="col-sm-2 col-sm-offset-5">
+            <input type="text" class="form-control" id="inputCal" placeholder="Total" name="calorie_intake">
+            </div>
+          </div>
+
+          <div class="form-group">
+          <div class="col-sm-12">
+              <label for="inputFood" class="col-sm-12">What exercise did you do?</label>
+              </div>
+          </div>
+              <div class="form-group">
+              <div class="col-sm-4 col-sm-offset-4">
+                  <input type="text" class="form-control" id="inputFood" placeholder="Title" name="exercise">
+              </div>
+          </div>
+          
+          <div class="form-group">
+          <div class="col-sm-12">
+              <label for="inputCal" class="col-sm-12">How many calories were burnt?</label>
+              </div>
+          </div>
+          <div class="form-group">
+          <div class="col-sm-2 col-sm-offset-5">
+            <input type="text" class="form-control" id="inputCal" placeholder="Total" name="calories_burnt">
+            </div>
+          </div><br>
+            <button class="btn btn-success" type="submit" name="post">Submit</button>
+        </form>
+      </div> 
+    </div><br>
+
     
     <div class="col-md-8 m-auto block" id="main_content">
     <h3>Your history</h3><br>
