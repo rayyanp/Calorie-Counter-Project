@@ -13,6 +13,7 @@ CSS Folder: Contains css for light and dark mode.
 profile: User Dashboard - When a user logs in they will be directed to the profile page where they can see their stats and calorie intake/usage. The user can input the food they have eaten and the calorie intake as well as the exercise they have done and the calorie usage. This will use the page ‘calorieupdate.php’. Also on this page the user can select the day they would like to view their history for using the page ‘historyOut.php’.
 calorieupdate.php: The user can input the food they have eaten and the calorie intake as well as the exercise they have done and the calorie usage.
 Profilenavbar.php: user navbar- contains links to pages only the user can access.
+Diary.php: The user can input the food they have eaten and the calorie intake as well as the exercise they have done and the calorie usage. This will use the page ‘calorieupdate.php’. Also they can view the days food eaten, calorie intake, exercise and calorie usage.
 History.php: User can view all their history for their calorie intake, usage, food they’ve eaten and what exercise they have done.
 HistoryOut.php: User can view their history for their calorie intake, usage, food they’ve eaten and what exercise they have done for the date they have selected.
 experience.php: View Posts table. User can view a forum where they can see guidance and tips provided by a mentor or an admin. They can also see posts from other users that want to share their experience.
