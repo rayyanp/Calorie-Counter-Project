@@ -14,7 +14,10 @@ echo <<<HEADER
         <a class="nav-link" href="edit_profile.php">Edit Profile</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="history.php">Diary</a>
+        <a class="nav-link" href="diary.php">Diary</a>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link" href="history.php">History</a>
     </li>
     <li class="nav-item active">
         <a class="nav-link" href="experience.php">Support</a>
