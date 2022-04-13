@@ -28,7 +28,7 @@
         $weight   = $row['weight'];
     }
     ;
-    $bmi1 = $weight / 2.2;
+    $bmi1 = $weight;
     $bmi2 = (($feet * 12) + $inches) / 39.37;
     $bmi2 = $bmi2 * $bmi2;
     $bmi1 = $bmi1 / $bmi2;
