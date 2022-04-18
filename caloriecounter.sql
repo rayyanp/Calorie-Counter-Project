@@ -55,16 +55,6 @@ CREATE TABLE `posts` (
   `image` varchar(64) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf16;
 
---
--- Dumping data for table `posts`
---
-
-INSERT INTO `posts` (`postid`,`uid`, `title`, `created`, `content`, `image`) VALUES
-(1, 1, 'How to reach your goal','2022-03-30 14:07:17','Try breaking down your goal into specific steps like this and track your progress. Just remember to adjust your plan if your results start to stall or if you are struggling to be consistent.', NULL),
-(2, 2, 'A word from one of the mentors','2022-03-31 10:09:07','If you are not losing weight as quickly as you had hoped dont get discouraged. Remember, your goal needs to be attainable, so be willing to adjust and set new goals if the old ones arent working for you. Even a little bit of progress can benefit your overall health and well-being. Focus on small changes that add up over time.', NULL),
-(3, 2, 'Advice on how to gain weight','2022-04-01 15:01:42','Increase your calorie intake: An athlete who wants to gain muscle weight should increase calories strategically. Eat plenty of high-calorie foods, such as protein-rich meats, healthy fats  and whole grains. Battling cancer or frailty due to aging? Eat anything you like. Cake, cookies, milkshakes, theyre all fair game. The goal is only to consume more calories.', NULL),
-(4, 2, 'Advice on how to lose weight','2022-04-02 11:27:11','A good rule of thumb for healthy weight loss is a deficit of about 500 calories per day. That should put you on course to lose about 1 pound per week. This is based on a starting point of at least 1,200 to 1,500 calories a day for women and 1,500 to 1,800 calories a day for men.', NULL);
-
 
 
 --
@@ -74,27 +64,26 @@ INSERT INTO `posts` (`postid`,`uid`, `title`, `created`, `content`, `image`) VAL
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `uid` int(11) NOT NULL,
-  `username` varchar(32) DEFAULT NULL,
-  `password` varchar(64) DEFAULT NULL,
-  `firstname` varchar(64) DEFAULT NULL,
-  `lastname` varchar(64) DEFAULT NULL,
-  `email` varchar(128) DEFAULT NULL,
-  `age` smallint(3) DEFAULT NULL,
-  `weight` int(3) DEFAULT NULL,
-  `feet` int(2) DEFAULT NULL,
-  `inches` int(2) DEFAULT NULL,
-  `calorie_goal` int(5) DEFAULT NULL
+  `Username` varchar(32) DEFAULT NULL,
+  `Password` varchar(64) DEFAULT NULL,
+  `FirstName` varchar(64) DEFAULT NULL,
+  `LastName` varchar(64) DEFAULT NULL,
+  `Email` varchar(128) DEFAULT NULL,
+  `Age` smallint(3) DEFAULT NULL,
+  `StartWeight` int(3) DEFAULT NULL,
+  `CurrentWeight` int(3) DEFAULT NULL,
+  `GoalWeight` int(3) DEFAULT NULL,
+  `Height` int(3) DEFAULT NULL,
+  `Unit1` int(3) DEFAULT NULL,
+  `Unit2` int(3) DEFAULT NULL,
+  `Mentor1` int(3) DEFAULT NULL,
+  `Mentor2` int(3) DEFAULT NULL,
+  `Mentor3` int(3) DEFAULT NULL,
+  `CalorieIntake` int(5) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf16;
 
---
--- Dumping data for table `users`
---
 
-INSERT INTO `users` (`uid`, `username`, `password`, `firstname`, `lastname`, `email`, `age`, `weight`, `feet`, `inches`, `calorie_goal`) VALUES
-(1, 'admin', 'admin1', NULL, NULL, 'admin@example.com',NULL, NULL, NULL, NULL, NULL),
-(2, 'mentor', 'mentor1',NULL, NULL, 'mentor@example.com',NULL, NULL, NULL, NULL, NULL),
-(3, 'supplier', 'supplier1',NULL, NULL, 'supplier@example.com',NULL, NULL, NULL, NULL, NULL),
-(4, 'usertest', 'password', 'Mark', 'Thomas', 'mark.thomas@example.com', 45, 90, 6, 1, 2500);
+
 
 --
 -- Indexes for table `calories`
