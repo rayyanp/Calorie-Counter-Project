@@ -1,7 +1,6 @@
 <?php
 include 'header.php';
 include 'verify.php';
-include 'profilenavbar.php';
 $show_edit_form = true;
 
 if(!isset($_SESSION['uid']))

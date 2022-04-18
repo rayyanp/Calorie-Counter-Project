@@ -1,7 +1,6 @@
 <?php 
 
 include "header.php";
-include "profilenavbar.php";
 
 ?>
 
