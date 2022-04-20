@@ -84,7 +84,7 @@ if(isset($_SESSION['username'])) {
     $x = $start_weight-$goal_weight;
     $y = $start_weight-$current_weight;
     $z = $y / $x;
-    $progress = $z * 100;
+    $progress = round($z * 100,0);
 
     $kg = 'kg';
     $lb = 'lb';
@@ -119,113 +119,109 @@ echo <<<ME
     <hr>
     <fieldset>
         <div class="container" id="MeEdit">
-            <div class="row">
+            <form action="" method="post">
+                <div class="row">
 
-                <div class="col">
-                    <label>First Name:</label><br>
-                    <label>Last Name:</label><br>
-                    <label>Username:</label><br>
-                    <label>Email:</label><br>
-                    <label>Password:</label><br>
-                    <label>Age:</label><br>
-                </div> 
+                    <div class="col">
+                        <label>First Name:</label><br>
+                        <label>Last Name:</label><br>
+                        <label>Username:</label><br>
+                        <label>Email:</label><br>
+                        <label>Password:</label><br>
+                        <label>Age:</label><br>
+                    </div> 
 
-                <div class="col">
-                    <div class="edit">
-                        <div class="myInfo">
-                        <form action="" method="post">
-                            <input type="text" name="firstname" value={$firstname}>
-                            <a href='#!' class='password-visibility'><i class='fa fa-pencil'></i></a><br>
-                            <input type="text" name="lastname" value={$lastname}>
-                            <a href='#!' class='password-visibility'><i class='fa fa-pencil'></i></a><br>
-                            <input type="text" name="username" value={$username}>
-                            <a href='#!' class='password-visibility'><i class='fa fa-pencil'></i></a><br>
-                            <input type="email" name="email" value={$email}>
-                            <a href='#!' class='password-visibility'><i class='fa fa-pencil'></i></a><br>
-                            <input type="password" name="password" value={$password}>
-                            <a href='#!' class='password-visibility'><i class='fa fa-pencil'></i></a><br>
-                            <input type="number" name="age" value={$age}>
-                            <a href='#!' class='password-visibility'><i class='fa fa-pencil'></i></a><br>
-                            <br>
-                            <button type="submit" name="post" class="btn btn-info">Update</button>
-                        </form>
+                    <div class="col">
+                        <div class="edit">
+                            <div class="myInfo">
+                                    <input type="text" name="firstname" value={$firstname}>
+                                    <a href='#!' class='password-visibility'><i class='fa fa-pencil'></i></a><br>
+                                    <input type="text" name="lastname" value={$lastname}>
+                                    <a href='#!' class='password-visibility'><i class='fa fa-pencil'></i></a><br>
+                                    <input type="text" name="username" value={$username}>
+                                    <a href='#!' class='password-visibility'><i class='fa fa-pencil'></i></a><br>
+                                    <input type="email" name="email" value={$email}>
+                                    <a href='#!' class='password-visibility'><i class='fa fa-pencil'></i></a><br>
+                                    <input type="password" name="password" value={$password}>
+                                    <a href='#!' class='password-visibility'><i class='fa fa-pencil'></i></a><br>
+                                    <input type="number" name="age" value={$age}>
+                                    <a href='#!' class='password-visibility'><i class='fa fa-pencil'></i></a><br>
+                                    <br>
+                            </div>
                         </div>
                     </div>
-                </div>
-
+            
+                    <div class="row">
+                        <button type="submit" name="post" class="btn btn-outline-primary" width=100%>Update</button>
+                    </div>
+                </form>
             </div>
 
-            <hr>
-            
-            <div>
+            <br><hr><br>
 
-            <div class="row">
             <form action="" method="post">
-                <div class="col">
-                    <label>Weight:</label><br>
-                </div> 
+                <div class="row">
+                    <div class="col">
+                        <label>Weight:</label><br>
+                    </div> 
 
-                <div class="col">
-                    <input type="number" name="current_weight" value={$current_weight}><br>
+                    <div class="col">
+                        <input type="number" name="current_weight" value={$current_weight}><br>
+                    </div>
+
+                    <div class="col">
+                        <select name="unit1" id="weight">
+                            <option value="$kg">kg</option>
+                            <option value="$lb">lb</option>
+                        </select>
+                    </div>
+
                 </div>
+                
+                <div class="row">
 
-                <div class="col">
-                    <select name="unit1" id="weight">
-                        <option value="$kg">kg</option>
-                        <option value="$lb">lb</option>
-                    </select>
+                    <div class="col">
+                        <label>Goal Weight:</label><br>
+                    </div> 
+
+                    <div class="col">
+                        <input type="number" name="goal_weight" value={$goal_weight}><br>
+                    </div>
+
+                    <div class="col">
+                    </div>
+
                 </div>
+                
+                <div class="row">
 
-            </div>
-            
-            <div class="row">
+                    <div class="col">
+                        <label>Height:</label><br>
+                    </div> 
 
-                <div class="col">
-                    <label>Goal Weight:</label><br>
-                </div> 
+                    <div class="col">
+                        <input type="number" name="height" value="183"><br>
+                    </div>
 
-                <div class="col">
-                    <input type="number" name="goal_weight" value={$goal_weight}><br>
+                    <div class="col">
+                        <select name="unit2" id="height">
+                            <option value="cm">cm</option>
+                            <option value="ft">Feet/Inches</option>
+                        </select>
+                    </div><br><br>
+
                 </div>
-
-                <div class="col">
+                <div class="row">
+                    <br><button type="submit" name="postw" class="btn btn-outline-primary" width=100%>Update</button>
                 </div>
-
-            </div>
-            
-            <div class="row">
-
-                <div class="col">
-                    <label>Height:</label><br>
-                </div> 
-
-                <div class="col">
-                    <input type="number" name="height" value="183"><br>
-                </div>
-
-                <div class="col">
-                    <select name="unit2" id="height">
-                        <option value="cm">cm</option>
-                        <option value="ft">Feet/Inches</option>
-                    </select>
-                </div>
-
-            </div>
-            <br><button type="submit" name="postw" class="btn btn-info">Update</button>
             </form>
-            </div>
-
-        <hr>
         
     </fieldset>
 </div>
-
-ME;
-?>
-
 <div class="divider">
 </div>
-<?php 
+
+ME; 
 } 
 include 'footer.php';
 ?>
