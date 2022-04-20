@@ -35,6 +35,7 @@ CREATE TABLE `calories` (
   `cid` int(5) NOT NULL,
   `uid` int(11) DEFAULT NULL,
   `food` varchar(120) DEFAULT NULL,
+  `meal` varchar(120) DEFAULT NULL,
   `calorie_intake` int(5) DEFAULT NULL,
   `exercise` varchar(120) DEFAULT NULL,
   `calories_burnt` int(5) DEFAULT NULL,
