@@ -70,6 +70,7 @@ CREATE TABLE `users` (
   `firstname` varchar(64) DEFAULT NULL,
   `lastname` varchar(64) DEFAULT NULL,
   `email` varchar(128) DEFAULT NULL,
+  `gender` varchar(6) DEFAULT NULL,
   `age` smallint(3) DEFAULT NULL,
   `start_weight` int(3) DEFAULT NULL,
   `current_weight` int(3) DEFAULT NULL,
