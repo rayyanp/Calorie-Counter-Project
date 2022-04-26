@@ -125,7 +125,11 @@
             </div><br>
 
             <p>By clicking Sign Up, you agree to our Terms and that have read our Data Policy, including your Cookie use.<p>
-              
+           
+
+            <input type="checkbox" id="TickBox" name="TickBox" value="checkbox">
+  <label for="vehicle1">I have read and Accept  the <a href="https://www.legislation.gov.uk/ukpga/2018/12/pdfs/ukpga_20180012_en.pdf"> Privacy Policy</a></label><br>
+
             <button class="btn btn-primary" type="submit" name="sign_up">Sign Up</button>
 
           </form><br>
