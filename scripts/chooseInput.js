@@ -27,4 +27,22 @@ function inputWeight() {
         } else {
             w.style.display = "none";
         }
+        
+}
+function inputSupport() {
+    var s = document.getElementById("inputSupport");
+        if (s.style.display === "none") {
+            s.style.display = "block";
+        } else {
+            s.style.display = "none";
+        }
+}
+
+function resultsSupport() {
+    var r = document.getElementById("resultsSupport");
+        if (r.style.display === "none") {
+            r.style.display = "block";
+        } else {
+            r.style.display = "none";
+        }
 }
