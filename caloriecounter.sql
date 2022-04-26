@@ -43,17 +43,15 @@ CREATE TABLE `calories` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf16;
 
 --
--- Table structure for table `posts`
+-- Table structure for table `mentors`
 --
 
-DROP TABLE IF EXISTS `posts`;
-CREATE TABLE `posts` (
-  `postid` int(5) NOT NULL,
+DROP TABLE IF EXISTS `mentors`;
+CREATE TABLE `mentors` (
+  `mentorid` int(5) NOT NULL,
   `uid` int(11) DEFAULT NULL,
-  `title` varchar(120) DEFAULT NULL,
-  `created` datetime NOT NULL,
-  `content` varchar(800) DEFAULT NULL,
-  `image` varchar(64) DEFAULT NULL
+  `pending` varchar(120) DEFAULT NULL,
+  `datetime` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf16;
 
 
@@ -70,7 +68,6 @@ CREATE TABLE `users` (
   `firstname` varchar(64) DEFAULT NULL,
   `lastname` varchar(64) DEFAULT NULL,
   `email` varchar(128) DEFAULT NULL,
-  `gender` varchar(6) DEFAULT NULL,
   `age` smallint(3) DEFAULT NULL,
   `start_weight` int(3) DEFAULT NULL,
   `current_weight` int(3) DEFAULT NULL,
@@ -95,10 +92,10 @@ ALTER TABLE `calories`
   ADD KEY `uid` (`uid`);
 
 --
--- Indexes for table `posts`
+-- Indexes for table `mentors`
 --
-ALTER TABLE `posts`
-  ADD PRIMARY KEY (`postid`),
+ALTER TABLE `mentors`
+  ADD PRIMARY KEY (`mentorid`),
   ADD KEY `uid` (`uid`);
 
 --
@@ -119,10 +116,10 @@ ALTER TABLE `calories`
   MODIFY `cid` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 --
--- AUTO_INCREMENT for table `posts`
+-- AUTO_INCREMENT for table `mentors`
 --
-ALTER TABLE `posts`
-  MODIFY `postid` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+ALTER TABLE `mentors`
+  MODIFY `mentorid` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 
 --
@@ -136,10 +133,10 @@ ALTER TABLE `users`
 --
 
 --
--- Constraints for table `posts`
+-- Constraints for table `mentors`
 --
-ALTER TABLE `posts`
-  ADD CONSTRAINT `posts_ibfk_1` FOREIGN KEY (`uid`) REFERENCES `users` (`uid`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `mentors`
+  ADD CONSTRAINT `mentors_ibfk_1` FOREIGN KEY (`uid`) REFERENCES `users` (`uid`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 --
