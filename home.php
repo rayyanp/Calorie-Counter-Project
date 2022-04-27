@@ -33,6 +33,66 @@ if(isset($_SESSION['username'])) {
          }
          mysqli_close($connection);
     }
+    $sql = "SELECT * FROM calories WHERE uid = '$_SESSION[uid]'";
+    $sql_result = mysqli_query($connection, $sql) or die(mysqli_error($connection));
+
+
+    while ($row = mysqli_fetch_assoc($sql_result)) {
+        $datetime = $row['datetime'];
+    }
+    ;
+
+    $sql1 = "SELECT SUM(calorie_intake) as 'TotalCalMon' FROM calories WHERE uid = '$uid' AND date(datetime) = curdate() -2";
+    $sql1_result = mysqli_query($connection, $sql1) or die(mysqli_error($connection));
+
+    while ($row = mysqli_fetch_assoc($sql1_result)) {
+        $totalCalMon = $row['TotalCalMon'];
+    }
+    ;
+
+    $sql2 = "SELECT SUM(calorie_intake) as 'TotalCalTues' FROM calories WHERE uid = '$uid' AND date(datetime) = curdate() -1";
+    $sql2_result = mysqli_query($connection, $sql2) or die(mysqli_error($connection));
+
+    while ($row = mysqli_fetch_assoc($sql2_result)) {
+        $totalCalTues = $row['TotalCalTues'];
+    }
+    ;
+
+    $sql3 = "SELECT SUM(calorie_intake) as 'TotalCalWed' FROM calories WHERE uid = '$uid' AND date(datetime) = curdate()";
+    $sql3_result = mysqli_query($connection, $sql3) or die(mysqli_error($connection));
+
+    while ($row = mysqli_fetch_assoc($sql3_result)) {
+        $totalCalWed = $row['TotalCalWed'];
+    }
+    ;
+    $sql4 = "SELECT SUM(calorie_intake) as 'TotalCalThurs' FROM calories WHERE uid = '$uid' AND date(datetime) = curdate() +1";
+    $sql4_result = mysqli_query($connection, $sql4) or die(mysqli_error($connection));
+
+    while ($row = mysqli_fetch_assoc($sql4_result)) {
+        $totalCalThurs = $row['TotalCalThurs'];
+    }
+    ;
+    $sql5 = "SELECT SUM(calorie_intake) as 'TotalCalFri' FROM calories WHERE uid = '$uid' AND date(datetime) = curdate() +3";
+    $sql5_result = mysqli_query($connection, $sql5) or die(mysqli_error($connection));
+
+    while ($row = mysqli_fetch_assoc($sql5_result)) {
+        $totalCalFri = $row['TotalCalFri'];
+    }
+    ;
+    $sql6 = "SELECT SUM(calorie_intake) as 'TotalCalSat' FROM calories WHERE uid = '$uid' AND date(datetime) = curdate() -5";
+    $sql6_result = mysqli_query($connection, $sql6) or die(mysqli_error($connection));
+
+    while ($row = mysqli_fetch_assoc($sql6_result)) {
+        $totalCalSat = $row['TotalCalSat'];
+    }
+    ;
+    $sql7 = "SELECT SUM(calorie_intake) as 'TotalCalSun' FROM calories WHERE uid = '$uid' AND date(datetime) = curdate() -6";
+    $sql7_result = mysqli_query($connection, $sql7) or die(mysqli_error($connection));
+
+    while ($row = mysqli_fetch_assoc($sql7_result)) {
+        $totalCalSun = $row['TotalCalSun'];
+    }
+    ;
 
     if(isset($_POST['post'])){
         $date=date("Y-m-d H:i:s");
@@ -67,7 +127,7 @@ if(isset($_SESSION['username'])) {
             
             <script>
             var xValues = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
-            var yValues = [2200, 2100, 2300, 2300, 2500, 2600, 900];
+            var yValues = [$totalCalMon, $totalCalTues, $totalCalWed, $totalCalThurs, $totalCalFri, $totalCalSat, $totalCalSun];
             var barColors = ["#14BCFF", "#14BCFF","#14BCFF","#14BCFF","#14BCFF","#14BCFF","#14BCFF"];
             
             new Chart("myChart", {
