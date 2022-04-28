@@ -69,6 +69,7 @@ CREATE TABLE `users` (
   `lastname` varchar(64) DEFAULT NULL,
   `email` varchar(128) DEFAULT NULL,
   `age` smallint(3) DEFAULT NULL,
+  `gender` varchar(6) DEFAULT NULL,
   `start_weight` int(3) DEFAULT NULL,
   `current_weight` int(3) DEFAULT NULL,
   `goal_weight` int(3) DEFAULT NULL,
@@ -82,6 +83,11 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf16;
 
 
+--
+-- Dumping data for table `users`
+--
+INSERT INTO `users` (`uid`, `username`, `password`, `firstname`, `lastname`, `email`, `age`, `gender`, `start_weight`, `current_weight`,`goal_weight`,`height`,`unit1`,`unit2`,`mentor1`,`mentor2`,`mentor3`,`calorie_intake`) VALUES
+(1, 'usertest', 'pass', 'Robert', 'Smith', 'user@example.com','21','Male', '90','90','75','6','kg','ft',NULL,NULL,NULL,NULL);
 
 
 --
