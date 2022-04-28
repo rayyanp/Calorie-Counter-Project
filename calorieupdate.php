@@ -1,7 +1,6 @@
 <?php
 include 'header.php';
 include 'verify.php';
-include 'profilenavbar.php';
 if(!isset($_SESSION['uid']))
 {
   echo 'You are being redirected to the home page!';

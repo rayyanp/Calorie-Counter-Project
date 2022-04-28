@@ -13,11 +13,14 @@
     $uid=$_SESSION['uid'];
     }
 
-    include 'profilenavbar.php';
-?>
-    <h3>Your History</h3><br>
-    <p>Add Recipes Below<p>
+echo <<<RECIPES
+    <h3>Recipe Categories</h3><br>
+    <p>API link to be added here<p>
+    
+    <div class="divider">
+    </div>
 
-<?php        
+RECIPES;
+
 include 'footer.php';
 ?>

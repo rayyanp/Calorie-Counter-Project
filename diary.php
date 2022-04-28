@@ -1,7 +1,6 @@
 <?php
 include 'header.php';
 include 'verify.php';
-include 'profilenavbar.php';
 if(!isset($_SESSION['uid']))
 {
   echo 'You are being redirected to the home page!';
@@ -121,6 +120,9 @@ while($row = mysqli_fetch_assoc($result)){
     </div>
   </div>
 </section>
+    
+    <div class="divider">
+    </div>
 <?php
 include 'footer.php';
 ?>
