@@ -87,7 +87,7 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 INSERT INTO `users` (`uid`, `username`, `password`, `firstname`, `lastname`, `email`, `age`, `gender`, `start_weight`, `current_weight`,`goal_weight`,`height`,`unit1`,`unit2`,`mentor1`,`mentor2`,`mentor3`,`calorie_intake`) VALUES
-(1, 'usertest', 'pass', 'Robert', 'Smith', 'user@example.com','21','Male', '90','90','75','6','kg','ft',NULL,NULL,NULL,NULL);
+(1, 'usertest', 'pass', 'Robert', 'Smith', 'user@example.com','21','Male', '90','82','75','6','kg','ft',NULL,NULL,NULL,NULL);
 
 --
 -- Dumping data for table `calories`
