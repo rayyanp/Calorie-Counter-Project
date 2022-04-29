@@ -42,7 +42,7 @@ if(isset($_SESSION['username'])) {
     }
     ;
 
-    $sql1 = "SELECT SUM(calorie_intake) as 'TotalCalMon' FROM calories WHERE uid = '$uid' AND date(datetime) = curdate() -2";
+    $sql1 = "SELECT SUM(calorie_intake) as 'TotalCalMon' FROM calories WHERE uid = '$uid' AND date(datetime) = curdate() -4";
     $sql1_result = mysqli_query($connection, $sql1) or die(mysqli_error($connection));
 
     while ($row = mysqli_fetch_assoc($sql1_result)) {
@@ -50,7 +50,7 @@ if(isset($_SESSION['username'])) {
     }
     ;
 
-    $sql2 = "SELECT SUM(calorie_intake) as 'TotalCalTues' FROM calories WHERE uid = '$uid' AND date(datetime) = curdate() -1";
+    $sql2 = "SELECT SUM(calorie_intake) as 'TotalCalTues' FROM calories WHERE uid = '$uid' AND date(datetime) = curdate() -3";
     $sql2_result = mysqli_query($connection, $sql2) or die(mysqli_error($connection));
 
     while ($row = mysqli_fetch_assoc($sql2_result)) {
@@ -58,35 +58,35 @@ if(isset($_SESSION['username'])) {
     }
     ;
 
-    $sql3 = "SELECT SUM(calorie_intake) as 'TotalCalWed' FROM calories WHERE uid = '$uid' AND date(datetime) = curdate()";
+    $sql3 = "SELECT SUM(calorie_intake) as 'TotalCalWed' FROM calories WHERE uid = '$uid' AND date(datetime) = curdate()-2";
     $sql3_result = mysqli_query($connection, $sql3) or die(mysqli_error($connection));
 
     while ($row = mysqli_fetch_assoc($sql3_result)) {
         $totalCalWed = $row['TotalCalWed'];
     }
     ;
-    $sql4 = "SELECT SUM(calorie_intake) as 'TotalCalThurs' FROM calories WHERE uid = '$uid' AND date(datetime) = curdate() +1";
+    $sql4 = "SELECT SUM(calorie_intake) as 'TotalCalThurs' FROM calories WHERE uid = '$uid' AND date(datetime) = curdate() -1";
     $sql4_result = mysqli_query($connection, $sql4) or die(mysqli_error($connection));
 
     while ($row = mysqli_fetch_assoc($sql4_result)) {
         $totalCalThurs = $row['TotalCalThurs'];
     }
     ;
-    $sql5 = "SELECT SUM(calorie_intake) as 'TotalCalFri' FROM calories WHERE uid = '$uid' AND date(datetime) = curdate() +3";
+    $sql5 = "SELECT SUM(calorie_intake) as 'TotalCalFri' FROM calories WHERE uid = '$uid' AND date(datetime) = curdate()";
     $sql5_result = mysqli_query($connection, $sql5) or die(mysqli_error($connection));
 
     while ($row = mysqli_fetch_assoc($sql5_result)) {
         $totalCalFri = $row['TotalCalFri'];
     }
     ;
-    $sql6 = "SELECT SUM(calorie_intake) as 'TotalCalSat' FROM calories WHERE uid = '$uid' AND date(datetime) = curdate() -5";
+    $sql6 = "SELECT SUM(calorie_intake) as 'TotalCalSat' FROM calories WHERE uid = '$uid' AND date(datetime) = curdate() -6";
     $sql6_result = mysqli_query($connection, $sql6) or die(mysqli_error($connection));
 
     while ($row = mysqli_fetch_assoc($sql6_result)) {
         $totalCalSat = $row['TotalCalSat'];
     }
     ;
-    $sql7 = "SELECT SUM(calorie_intake) as 'TotalCalSun' FROM calories WHERE uid = '$uid' AND date(datetime) = curdate() -6";
+    $sql7 = "SELECT SUM(calorie_intake) as 'TotalCalSun' FROM calories WHERE uid = '$uid' AND date(datetime) = curdate() -5";
     $sql7_result = mysqli_query($connection, $sql7) or die(mysqli_error($connection));
 
     while ($row = mysqli_fetch_assoc($sql7_result)) {
