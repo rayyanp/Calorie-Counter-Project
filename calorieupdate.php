@@ -35,12 +35,12 @@ if(isset($_POST['post'])){
     $query_run = mysqli_query($connection,$query);
     if($query_run){
       echo "<script>alert('Posted successfully...');
-      window.location.href = 'profile.php';
+      window.location.href = 'diary.php';
       </script>";
     }
     else{
       echo "<script>alert('Post failed...{$errors} try again');
-      window.location.href = 'calorieupdate.php';
+      window.location.href = 'diary.php';
       </script>";
     }
     mysqli_close($connection);
