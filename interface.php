@@ -353,8 +353,8 @@ else {
 
                 <div class="col">
                   <select name="unit1" id="weight">
-                      <option value="$kg">kg</option>
-                      <option value="$lb">lb</option>
+                      <option value="kg">kg</option>
+                      <option value="lb">lb</option>
                   </select>
                 </div>
               </div>
