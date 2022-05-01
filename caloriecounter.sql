@@ -105,7 +105,7 @@ INSERT INTO `users` (`uid`, `username`, `password`, `firstname`, `lastname`, `em
 INSERT INTO `calories` (`cid`,`uid`, `food`, `meal`, `calorie_intake`, `exercise`, `calories_burnt`, `datetime`) VALUES
 (1, 1, 'Cereal', 'Breakfast', '243', NULL, NULL,'2022-04-01 10:09:07'),
 (2, 1, 'Burger', 'Lunch', '743', NULL, NULL,'2022-04-01 10:09:07'),
-(3, 1, 'Crips', 'Snack', '343', NULL, NULL,'2022-04-01 10:09:07'),
+(3, 1, 'Crisps', 'Snack', '343', NULL, NULL,'2022-04-01 10:09:07'),
 (4, 1, 'Cottage Pie', 'Dinner', '843', NULL, NULL,'2022-04-01 10:09:07'),
 (5, 1, 'Cereal', 'Breakfast', '243', NULL, NULL,'2022-04-02 10:09:07'),
 (6, 1, 'Pizza', 'Lunch', '1333', NULL, NULL,'2022-04-02 11:09:07'),
@@ -219,7 +219,16 @@ INSERT INTO `calories` (`cid`,`uid`, `food`, `meal`, `calorie_intake`, `exercise
 (115, 1, 'Cereal', 'Breakfast', '250', NULL, NULL,'2022-04-30 10:09:07'),
 (116, 1, 'Chicken Sandwhich', 'Lunch', '550', NULL, NULL,'2022-04-30 11:09:07'),
 (117, 1, 'Choclate', 'Snack', '350', NULL, NULL,'2022-04-30 10:09:07'),
-(118, 1, 'Cheeseburger', 'Dinner', '1050', NULL, NULL,'2022-04-30 10:09:07');
+(118, 1, 'Cheeseburger', 'Dinner', '1050', NULL, NULL,'2022-04-30 10:09:07'),
+(119, 1, 'Cereal', 'Breakfast', '233', NULL, NULL,'2022-05-01 09:09:07'),
+(120, 1, 'Pasta', 'Lunch', '539', NULL, NULL,'2022-05-01 12:29:03'),
+(121, 1, 'Cheesecake', 'Snack', '376', NULL, NULL,'2022-05-01 15:19:27'),
+(122, 1, 'Chicken Sizzler', 'Dinner', '815', NULL, NULL,'2022-05-01 19:45:00'),
+(123, 1, 'Oatmeal', 'Breakfast', '223', NULL, NULL,'2022-05-02 09:05:57'),
+(124, 1, 'Burrito', 'Lunch', '593', NULL, NULL,'2022-05-02 12:19:03'),
+(125, 1, 'Crisps', 'Snack', '332', NULL, NULL,'2022-05-02 15:29:47'),
+(126, 1, 'Chicken Roast', 'Dinner', '987', NULL, NULL,'2022-05-02 19:25:00');
+
 
 
 
