@@ -15,7 +15,12 @@ if (isset($_SESSION['username'])) {
   $calorieQuery = "SELECT SUM(calorie_intake) FROM calories WHERE uid = '$_SESSION[uid]' AND date(datetime) = curdate();";
   $calorieResult = mysqli_query($connection, $calorieQuery);
   $crTemp = mysqli_fetch_array($calorieResult);
-  $cr = $crTemp[0];
+  if(empty($crTemp[0])) {
+    $cr = 0;
+  }
+  else {
+    $cr = $crTemp[0];
+  }
 
 
   $query = "SELECT * FROM users WHERE uid = '$_SESSION[uid]'";
@@ -25,6 +30,7 @@ if (isset($_SESSION['username'])) {
     $sw = $row['start_weight'];
     $cw = $row['current_weight'];
     $gw = $row['goal_weight'];
+    $g = $row['gender'];
 
   }
 
@@ -43,8 +49,12 @@ if (isset($_SESSION['username'])) {
 
   // intake figures
 
-  $ci = round($result2 - $reduction2);
-
+  if($g == "Male") {
+    $ci = MAX(round($result2 - $reduction2),1800);
+  }
+  else {
+    $ci = MAX(round($result2 - $reduction2),1500);
+  }
   $ri = round($ci - $cr);
 
 
@@ -329,8 +339,8 @@ elseif ($_SERVER['REQUEST_URI'] != $path .'tos.php') {
                       placeholder="Enter your age" required>
                       <select name="gender" id="gender">
                           <option value="" selected disabled hidden>Select your Gender</option>
-                          <option value="male">Male</option>
-                          <option value="female">Female</option><br>
+                          <option value="Male">Male</option>
+                          <option value="Female">Female</option><br>
                       </select>
                     </div>
                   </div>

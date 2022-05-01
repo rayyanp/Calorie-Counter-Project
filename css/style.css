@@ -66,8 +66,9 @@ hr {
 /* change the styling of the <hr> tags to make them look a bit more interesting and in-keeping with the aesthetic of the site */
 
 #UserNav {
-    display: inline-block !important;
+    display: flex;
     float: none;
+    justify-content: center;
     position: fixed;
     top: 93%;
     height: 7%;
@@ -153,4 +154,81 @@ input {
 .table-main caption {
     font-style: italic;
     color: white;
+}
+
+/* recipe cards */
+
+#board {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 80px;
+}
+.card {
+    display: grid;
+    grid-template-columns: 250px;
+    grid-template-rows: 150px 50px 155px 35px;
+    grid-template-areas: "image" "title" "text" "bottom";
+    border-radius: 18px;
+    background-color: white;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+    text-align: center;
+    overflow-wrap: break-word;
+    overflow: hidden;
+    margin: 1%;
+    transition: transform 0.5s ease-in;
+}
+
+.card:hover {
+    transform: none !important;
+    z-index: 2;
+}
+
+.card-image {
+    grid-area: image;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-size: cover;
+    background-repeat:   no-repeat;
+    background-position: center center;
+}
+
+.card-date, .card-title {
+    margin: 0%;
+}
+
+.card-title {
+    grid-area: title;
+    margin: 0%;
+    font-size: 0.8rem;
+    overflow: auto;
+}
+
+.card-text {
+    grid-area: text;
+    overflow: auto;
+    margin: 0%;
+    padding-left: 5%;
+    text-shadow: none;
+    font-size: 0.9rem;
+    resize: none;
+}
+
+.card-footer {
+    grid-area: bottom;
+    overflow: hidden;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    bottom: -20%;
+}
+
+.label {
+    padding: 0%;
+    margin: 0%;
+    font-size: 1em;
+    bottom: 0%;
 }

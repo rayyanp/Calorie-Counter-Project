@@ -151,8 +151,8 @@ echo <<<ME
                                     <a href='#!' class='password-visibility'><i class='fa fa-pencil'></i></a><br>
                                     <select name="gender" id="gender">
                                         <option value="" selected disabled hidden>{$gender}</option>
-                                        <option value="male">Male</option>
-                                        <option value="female">Female</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
                                     </select>
                                     <br><br>
                             </div>
