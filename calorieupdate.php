@@ -15,26 +15,23 @@ if(isset($_POST['post'])){
   $connection = mysqli_connect("localhost","root","");
   $db = mysqli_select_db($connection,"caloriecounter");
   $date=date("Y-m-d H:i:s");
+  $meal = $_POST['meal'];
   $food = $_POST['food'];
   $calories = $_POST['calorie_intake'];
-  $exercise = $_POST['exercise'];
-  $calories_burnt = $_POST['calories_burnt'];
 
+  $meal = sanitise($meal,$connection);
   $food = sanitise($food,$connection);
   $calories = sanitise($calories,$connection);
-  $exercise = sanitise($exercise,$connection);
-  $calories_burnt = sanitise($calories_burnt,$connection);
-  $error1 = validateString($food, 1, 120);
-  $error2 = validateString($calories, 1, 800);
-  $error3 = validateString($exercise, 1, 120);
-  $error4 = validateString($calories_burnt, 1, 800);
-  $errors = $error1.$error2.$error3.$error4;
+  $error1 = validateString($meal, 1, 120);
+  $error2 = validateString($food, 1, 120);
+  $error3 = validateString($calories, 1, 800);
+  $errors = $error1.$error2;
   
   if (!$errors) {
-    $query = "INSERT INTO calories (uid, food, calorie_intake, exercise, calories_burnt, datetime) VALUES('$uid','$food','$calories','$exercise','$calories_burnt','$date')";
+    $query = "INSERT INTO calories (uid, food, meal, calorie_intake, datetime) VALUES('$uid','$food','$meal','$calories','$date')";
     $query_run = mysqli_query($connection,$query);
     if($query_run){
-      echo "<script>alert('Posted successfully...');
+      echo "<script>alert('You have added your calories successfully!');
       window.location.href = 'diary.php';
       </script>";
     }
