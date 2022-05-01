@@ -38,13 +38,22 @@ else
       <h3>Add your calories</h3><br>
         <form action="calorieupdate.php" method="post" enctype="multipart/form-data">
         <div class="form-group">
+        <div class="col-3">
+                <select name="meal" id="meal">
+                    <option value="" selected disabled hidden>Select Meal</option>
+                    <option value="Breakfast">Breakfast</option>
+                    <option value="Lunch">Lunch</option>
+                    <option value="Dinner">Dinner</option>
+                    <option value="Snack">Snack</option>
+                </select>
+            </div>
           <div class="col-sm-12">
               <label for="inputFood" class="col-sm-12">What did you eat?</label>
               </div>
           </div>
               <div class="form-group">
               <div class="col-sm-4 col-sm-offset-4">
-                  <input type="text" class="form-control" id="inputFood" placeholder="Title" name="food">
+                  <input type="text" class="form-control" id="inputFood" placeholder="Food eaten" name="food">
               </div>
           </div>
           
@@ -55,7 +64,7 @@ else
           </div>
           <div class="form-group">
           <div class="col-sm-2 col-sm-offset-5">
-            <input type="text" class="form-control" id="inputCal" placeholder="Total" name="calorie_intake">
+            <input type="text" class="form-control" id="inputCal" placeholder="Number of calories" name="calorie_intake">
             </div>
           </div><br>
             <button class="btn btn-outline-primary" type="submit" name="post">Add</button>
