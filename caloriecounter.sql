@@ -231,7 +231,6 @@ INSERT INTO `calories` (`cid`,`uid`, `food`, `meal`, `calorie_intake`, `exercise
 
 
 
-
 --
 -- Indexes for table `calories`
 --
