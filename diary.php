@@ -32,84 +32,95 @@ else
   $default_query = "SELECT meal,food,calorie_intake, CAST(datetime as time) AS 'Time' FROM calories WHERE uid = $uid AND date(datetime) = curdate();";
   $result = executeQuery($default_query);
 }
-?>
-      <h3><center>Diary<center></h3><br>
-        <div class="col-md-8 m-auto block" id="main_content">
-      <h3>Add your calories</h3><br>
-        <form action="calorieupdate.php" method="post" enctype="multipart/form-data">
-        <div class="form-group">
+echo <<<DIARY
+  <div class="container" id="main_content">
+
+    <h3>Manage your Calories</h3>
+
+    <label>Add today's calories</label><br><br>
+
+    <form action="calorieupdate.php" method="post" enctype="multipart/form-data">
+      
+      <div class="row">
+
         <div class="col-3">
-                <select name="meal" id="meal" required>
-                    <option value="" selected disabled hidden>Select Meal</option>
-                    <option value="Breakfast">Breakfast</option>
-                    <option value="Lunch">Lunch</option>
-                    <option value="Dinner">Dinner</option>
-                    <option value="Snack">Snack</option>
-                </select>
-            </div>
-          <div class="col-sm-12">
-              <label for="inputFood" class="col-sm-12">What did you eat?</label>
-              </div>
-          </div>
-              <div class="form-group">
-              <div class="col-sm-4 col-sm-offset-4">
-                  <input type="text" class="form-control" id="inputFood" placeholder="Food eaten" name="food" required>
-              </div>
-          </div>
-          
-          <div class="form-group">
-          <div class="col-sm-12">
-              <label for="inputCal" class="col-sm-12">How many calories?</label>
-              </div>
-          </div>
-          <div class="form-group">
-          <div class="col-sm-2 col-sm-offset-5">
-            <input type="text" class="form-control" id="inputCal" placeholder="Number of calories" name="calorie_intake" required>
-            </div>
-          </div><br>
-            <button class="btn btn-outline-primary" type="submit" name="post">Add</button>
-        </form>
-      </div> 
-    </div><br>
-    <div class="col-md-8 m-auto block" id="main_content">
-      <form action="diary.php" method="post">
-      <input type="submit" class = "btn btn-outline-primary" name="minus" value="Previous Day">
-      <input type="submit" class = "btn btn-outline-primary" name="plus" value="Current Day">
-    <table class="table-main">
-    <tr>
-      <th>Meal</th>
-      <th>Food</th>
-      <th>Calories</th>
-      <th>Time</th>
-    </tr>
-<?php
-function executeQuery($query)
-{
+          <select name="meal" id="meal" required>
+            <option value="" selected disabled hidden>Select Meal</option>
+            <option value="Breakfast">Breakfast</option>
+            <option value="Lunch">Lunch</option>
+            <option value="Dinner">Dinner</option>
+            <option value="Snack">Snack</option>
+          </select>
+        </div>
+
+        <div class="col-4">
+          <input type="text"id="inputFood" placeholder="Food" name="food" required>
+        </div>
+
+        <div class="col-2">
+          <input type="text"id="inputCal" placeholder="Calories" name="calorie_intake" required>
+        </div>
+
+      </div><br>
+
+      <span><button type="submit" name="post" class="btn btn-primary" style="width: 100%;">Add</button></span>
+
+    </form>
+
+    <hr>
+
+    <label>Review calorie intake</label><br><br>
+
+    <form action="diary.php" method="post">
+      <div class="row">
+        <div class="col">
+          <button type="submit" name="minus" class="btn btn-outline-primary">Previous Day</button>
+        </div>
+        <div class="col">
+          <button type="submit" name="plus" class="btn btn-outline-primary">Current Day</button>
+        </div>
+        <div class="col">
+          <button type="submit" name="plus" class="btn btn-outline-primary">Next Day</button>
+        </div>
+      </div>
+
+      <hr>
+
+      <table class="table-main">
+        <tr>
+          <th>Meal</th>
+          <th>Food</th>
+          <th>Calories</th>
+          <th>Time</th>
+        </tr>
+DIARY;
+function executeQuery($query) {
     $connection = mysqli_connect("localhost","root","");
     $db = mysqli_select_db($connection,"caloriecounter");
     $result = mysqli_query($connection, $query);
     return $result;
 }
-while($row = mysqli_fetch_assoc($result)){
-  ?> 
-<tr>
-    <td><?php echo $row['meal'];?></td>
-    <td><?php echo $row['food'];?></td>
-    <td><?php echo $row['calorie_intake'];?></td>
-    <td><?php echo $row['Time'];?></td>
-</tr>
-  <?php
+while($row = mysqli_fetch_assoc($result)) {
+
+  echo <<<DIARY
+        <tr>
+          <td>{$row['meal']}</td>
+          <td>{$row['food']}</td>
+          <td>{$row['calorie_intake']}</td>
+          <td>{$row['Time']}</td>
+        </tr>
+  DIARY;
 }
-?>
+echo <<<DIARY
       </table>
-      </form>
-    </div>
+    </form>
   </div>
-</section>
     
-    <div class="divider">
-    </div>
-<?php
+  <div class="divider">
+  </div>
+  
+DIARY;
+
 include 'footer.php';
 ?>
 

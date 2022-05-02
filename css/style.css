@@ -81,6 +81,15 @@ label {
     font-weight: bolder;
 }
 
+.row-recipes {
+    overflow: auto;
+    white-space: nowrap;
+}
+
+.row-recipes>img {
+    width: 200px;
+}
+
 input {
     height: calc(1.6em + .6vw);
 }
@@ -129,13 +138,14 @@ input {
 .table-main th,
 .table-main td {
     border: 1px solid lightgrey;
+    width: 100%;
 }
 
 
 /* table header row only */
 
 .table-main th {
-    background-color: rgb(0, 178, 223);
+    background-color: var(--colourBG);
     color: white;
     padding: 10px;
 }
