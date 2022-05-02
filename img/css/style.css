@@ -1,0 +1,243 @@
+:root {
+    /* Theme variables */
+    --colourPri: #022140;
+    --colourSec: #c5c5c5;
+    --colourBG: #14BCFF;
+    --colourText: #f0f0f0;
+    --colourNav: #c68c53a8;
+    --colourHover: #233385;
+}
+
+hr {
+    border-top: 3px solid var(--colourHover);
+}
+
+.heading {
+    font-weight: bold;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.divider {
+    margin-bottom: 15%;
+}
+
+#logo {
+    float: left;
+}
+
+#calorie,
+#loginHeader {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    padding-bottom: 1.5em;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+    color: var(--colourText);
+    background-color: var(--colourBG);
+}
+
+.title {
+    font-size: 1.3em;
+    text-align: left;
+    padding-top: .5em;
+}
+
+#home {
+    padding-top: 1em;
+}
+
+#homeToggle,
+#supportToggle {
+    font-size: 5em;
+    padding-right: 20px;
+}
+
+#homeToggle {
+    text-align: right;
+}
+
+#supportToggle {
+    text-align: center;
+}
+
+
+/* change the styling of the <hr> tags to make them look a bit more interesting and in-keeping with the aesthetic of the site */
+
+#UserNav {
+    display: flex;
+    float: none;
+    justify-content: center;
+    position: fixed;
+    top: 93%;
+    height: 7%;
+    width: 100%;
+    background-color: var(--colourBG);
+}
+
+label {
+    font-size: 1.2em;
+    font-weight: bolder;
+}
+
+.row-recipes {
+    overflow: auto;
+    white-space: nowrap;
+}
+
+.row-recipes>img {
+    width: 200px;
+}
+
+input {
+    height: calc(1.6em + .6vw);
+}
+
+.nav>li>a {
+    padding: 1px;
+}
+
+.progressDonut {
+    --percentage: 0;
+    margin-top: 1em;
+    width: 300px;
+    height: 150px;
+    color: var(--colourBG);
+    font-size: 1.2em;
+    font-weight: 600;
+    overflow: hidden;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.progressDonut::after {
+    content: '';
+    width: 300px;
+    height: 300px;
+    border: 50px solid;
+    border-color: rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) var(--colourBG) var(--colourBG);
+    position: absolute;
+    border-radius: 50%;
+    left: 0;
+    top: 0;
+    box-sizing: border-box;
+    transform: rotate( calc( 1deg * ( -45 + var(--percentage) * 1.8)));
+    animation: fillAnimation 1s ease-in;
+}
+
+
+/* create a new selector with the name table-main  */
+
+.table-main,
+.table-main th,
+.table-main td {
+    border: 1px solid lightgrey;
+}
+
+
+/* table header row only */
+
+.table-main th {
+    background-color: rgb(0, 178, 223);
+    color: white;
+    padding: 10px;
+}
+
+
+/* table cells only */
+
+.table-main td {
+    background-color: #ffffff;
+    padding: 5px;
+}
+
+
+/* table caption only */
+
+.table-main caption {
+    font-style: italic;
+    color: white;
+}
+
+/* recipe cards */
+
+#board {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 80px;
+}
+.card {
+    display: grid;
+    grid-template-columns: 250px;
+    grid-template-rows: 150px 50px 155px 35px;
+    grid-template-areas: "image" "title" "text" "bottom";
+    border-radius: 18px;
+    background-color: white;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+    text-align: center;
+    overflow-wrap: break-word;
+    overflow: hidden;
+    margin: 1%;
+    transition: transform 0.5s ease-in;
+}
+
+.card:hover {
+    transform: none !important;
+    z-index: 2;
+}
+
+.card-image {
+    grid-area: image;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-size: cover;
+    background-repeat:   no-repeat;
+    background-position: center center;
+}
+
+.card-date, .card-title {
+    margin: 0%;
+}
+
+.card-title {
+    grid-area: title;
+    margin: 0%;
+    font-size: 0.8rem;
+    overflow: auto;
+}
+
+.card-text {
+    grid-area: text;
+    overflow: auto;
+    margin: 0%;
+    padding-left: 5%;
+    text-shadow: none;
+    font-size: 0.9rem;
+    resize: none;
+}
+
+.card-footer {
+    grid-area: bottom;
+    overflow: hidden;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    bottom: -20%;
+}
+
+.label {
+    padding: 0%;
+    margin: 0%;
+    font-size: 1em;
+    bottom: 0%;
+}
