@@ -14,7 +14,45 @@
 
 echo <<<RECIPES
     <h3>Recipe Categories</h3><br>
-    <p>API link to be added here<p>
+    <div class="container" id="recipes">
+
+      <label>Low Carb</label>
+
+      <div class="row-recipes">
+        <img src="img/lowCarb1.png" alt="Low Carb Receipe 1">
+        <img src="img/lowCarb2.png" alt="Low Carb Receipe 2">
+        <img src="img/lowCarb3.png" alt="Low Carb Receipe 3">
+        <img src="img/lowCarb4.png" alt="Low Carb Receipe 4">
+      </div>
+
+      <hr>
+
+      <label>High Protein</label>
+      
+      <div class="row-recipes">
+        <img src="img/highProtein1.png" alt="High Protein Receipe 1"> 
+        <img src="img/highProtein2.png" alt="High Protein Receipe 2"> 
+        <img src="img/highProtein3.png" alt="High Protein Receipe 3"> 
+        <img src="img/highProtein4.png" alt="High Protein Receipe 4"> 
+      </div>
+
+      <hr>
+
+      <label>Paleo</label>
+
+      <div class="row-recipes">
+        <img src="img/paleo1.png" alt="Paleo Receipe 1">
+        <img src="img/paleo2.png" alt="Paleo Receipe 2">
+        
+      </div>
+
+      <hr>
+
+      <div class="row-recipes">
+        
+      </div>
+
+    </div>
     
     <div class="divider">
     </div>
