@@ -166,27 +166,27 @@ if(isset($_SESSION['username'])) {
 
             <div id="inputWeight" style="display:none";>
                 <hr>
-                <div class="row">
-                    <div class="col-4">
-                        <label>Today's Weight:</label>
-                    </div>
-                    <form action="" method="POST">
-                    <div class="col-5"> 
-                        <input type="number" name="current_weight" placeholder="Today's Weight"><br>
+                <form action="" method="POST">
+                    <div class="row">
+                        <div class="col-4">
+                            <label>Today's Weight:</label>
+                        </div>
+                        <div class="col"> 
+                            <input type="text" name="current_weight">
+                        </div>
+
+                        <div class="col">
+                            <select name="unit1" id="weight">
+                                <option value="kg">kg</option>
+                                <option value="lb">lb</option>
+                            </select>
+                        </div>
                     </div>
 
-                    <div class="col-3">
-                        <select name="unit1" id="weight">
-                            <option value="kg">kg</option>
-                            <option value="lb">lb</option>
-                        </select>
-                    </div>
-                </div>
-
-                <hr>
-                
-                <span><button type="submit" name="POST" class="btn btn-primary" style="width: 100%;">Submit</button></span>
-            </form>
+                    <hr>
+                    
+                    <span><button type="submit" name="POST" class="btn btn-primary" style="width: 100%;">Submit</button></span>
+                </form>
             </div>
 
 
