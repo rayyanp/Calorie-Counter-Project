@@ -43,12 +43,20 @@ echo <<<RECIPES
       <div class="row-recipes">
         <img src="img/paleo1.png" alt="Paleo Receipe 1">
         <img src="img/paleo2.png" alt="Paleo Receipe 2">
+        <img src="img/paleo3.png" alt="Paleo Receipe 3">
+        <img src="img/paleo4.png" alt="Paleo Receipe 4">
         
       </div>
 
       <hr>
 
+      <label>Vegetarian</label>
+
       <div class="row-recipes">
+        <img src="img/vegetarian1.png" alt="Vegetarian Receipe 1">
+        <img src="img/vegetarian2.png" alt="Vegetarian Receipe 2">
+        <img src="img/vegetarian3.png" alt="Vegetarian Receipe 3">
+        <img src="img/vegetarian4.png" alt="Vegetarian Receipe 4">
         
       </div>
 
